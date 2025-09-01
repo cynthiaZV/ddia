@@ -1,164 +1,41 @@
-# 设计数据密集型应用 - 中文翻译版
+---
+title: 贡献者
+weight: 800
+breadcrumbs: false
+---
 
-[![Webite: ddia](https://img.shields.io/badge/v1-ddia.pigsty.io-slategray?style=flat)](https://ddia.vonng.com)
-[![GitHub Stars](https://img.shields.io/github/stars/Vonng/ddia?style=flat&logo=github&logoColor=black&color=slategray)](https://star-history.com/#Vonng/ddia&Date)
+## 译者
 
-**作者**： [Martin Kleppmann](https://martin.kleppmann.com)，[《Designing Data-Intensive Applications 2nd Edition》](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ch01.html) ： 英国剑桥大学分布式系统研究员，演讲者，博主和开源贡献者，软件工程师和企业家，曾在 LinkedIn 和 Rapportive 负责数据基础架构。
+[**冯若航**](https://vonng.com)，网名 [@Vonng](https://github.com/Vonng)。
+PostgreSQL 专家，数据库老司机，云计算泥石流。
+[**Pigsty**](https://pgsty.com) 作者与创始人。
+架构师，DBA，全栈工程师 @ TanTan，Alibaba，Apple。
+独立开源贡献者，[GitStar Ranking 585](https://gitstar-ranking.com/Vonng)，[国区活跃 Top20](https://committers.top/china)。
+[DDIA](https://ddia.pigsty.io) / [PG Internal](https://pgint.vonng.com) 中文版译者，公众号：《老冯云数》，数据库 KOL。
 
-**译者**：[冯若航](https://vonng.com) / [Vonng](https://github.com/Vonng) (rh@vonng.com)： 创业者，[开源贡献者](https://gitstar-ranking.com/Vonng)，PostgreSQL Hacker。开源 RDS PG [Pigsty](https://pigsty.cc/zh/) 与公众号《[非法加冯](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)》作者，[数据库老司机](https://pigsty.cc/zh/blog/db)，[云计算泥石流](https://pigsty.cc/zh/blog/cloud)，曾于阿里，苹果，探探担任架构师与DBA。
+## 校订与维护
 
-**校订**： [@yingang](https://github.com/yingang)  ｜  [繁體中文](zh-tw/README.md) **版本维护** by  [@afunTW](https://github.com/afunTW)
+YinGang [@yingang](https://github.com/yingang) 对本书进行了全文校订，并持续维护。
 
-**通知**：DDIA [**第二版**](https://ddia.vonng.com/v2) 正在翻译中 ([`content/v2`](https://github.com/Vonng/ddia/tree/hugo/content/v2) 目录)，欢迎加入并提出您的宝贵意见！
+## 繁体中文版本
 
+[繁體中文](/tw) **版本维护** by  [@afunTW](https://github.com/afunTW)
 
+## 贡献列表
 
----------
-
-## 译序
-
-> 不懂数据库的全栈工程师不是好架构师 —— 冯若航 / [@Vonng](https://github.com/Vonng)
-
-现今，尤其是在互联网领域，大多数应用都属于数据密集型应用。本书从底层数据结构到顶层架构设计，将数据系统设计中的精髓娓娓道来。其中的宝贵经验无论是对架构师、DBA、还是后端工程师、甚至产品经理都会有帮助。
-
-这是一本理论结合实践的书，书中很多问题，译者在实际场景中都曾遇到过，读来让人击节扼腕。如果能早点读到这本书，该少走多少弯路啊！
-
-这也是一本深入浅出的书，讲述概念的来龙去脉而不是卖弄定义，介绍事物发展演化历程而不是事实堆砌，将复杂的概念讲述的浅显易懂，但又直击本质不失深度。每章最后的引用质量非常好，是深入学习各个主题的绝佳索引。
-
-本书为数据系统的设计、实现、与评价提供了很好的概念框架。读完并理解本书内容后，读者可以轻松看破大多数的技术忽悠，与技术砖家撕起来虎虎生风🤣。
-
-这是 2017 年译者读过最好的一本技术类书籍，这么好的书没有中文翻译，实在是遗憾。某不才，愿为先进技术文化的传播贡献一份力量。既可以深入学习有趣的技术主题，又可以锻炼中英文语言文字功底，何乐而不为？
-
-
----------
-
-## 前言
-
-> 在我们的社会中，技术是一种强大的力量。数据、软件、通信可以用于坏的方面：不公平的阶级固化，损害公民权利，保护既得利益集团。但也可以用于好的方面：让底层人民发出自己的声音，让每个人都拥有机会，避免灾难。本书献给所有将技术用于善途的人们。
-
----------
-
-> 计算是一种流行文化，流行文化鄙视历史。流行文化关乎个体身份和参与感，但与合作无关。流行文化活在当下，也与过去和未来无关。我认为大部分（为了钱）编写代码的人就是这样的，他们不知道自己的文化来自哪里。
->
->  —— 阿兰・凯接受 Dobb 博士的杂志采访时（2012 年）
-
-
----------
-
-## 目录
-
-### [序言](content/zh/preface.md)
-
-### [第一部分：数据系统基础](content/zh/part-i.md)
-
-* [第一章：可靠性、可伸缩性和可维护性](content/zh/ch1.md)
-    * [关于数据系统的思考](content/zh/ch1.md#关于数据系统的思考)
-    * [可靠性](content/zh/ch1.md#可靠性)
-    * [可伸缩性](content/zh/ch1.md#可伸缩性)
-    * [可维护性](content/zh/ch1.md#可维护性)
-    * [本章小结](content/zh/ch1.md#本章小结)
-* [第二章：数据模型与查询语言](content/zh/ch2.md)
-    * [关系模型与文档模型](content/zh/ch2.md#关系模型与文档模型)
-    * [数据查询语言](content/zh/ch2.md#数据查询语言)
-    * [图数据模型](content/zh/ch2.md#图数据模型)
-    * [本章小结](content/zh/ch2.md#本章小结)
-* [第三章：存储与检索](content/zh/ch3.md)
-    * [驱动数据库的数据结构](content/zh/ch3.md#驱动数据库的数据结构)
-    * [事务处理还是分析？](content/zh/ch3.md#事务处理还是分析？)
-    * [列式存储](content/zh/ch3.md#列式存储)
-    * [本章小结](content/zh/ch3.md#本章小结)
-* [第四章：编码与演化](content/zh/ch4.md)
-    * [编码数据的格式](content/zh/ch4.md#编码数据的格式)
-    * [数据流的类型](content/zh/ch4.md#数据流的类型)
-    * [本章小结](content/zh/ch4.md#本章小结)
-
-### [第二部分：分布式数据](content/zh/part-ii.md)
-
-* [第五章：复制](content/zh/ch5.md)
-    * [领导者与追随者](content/zh/ch5.md#领导者与追随者)
-    * [复制延迟问题](content/zh/ch5.md#复制延迟问题)
-    * [多主复制](content/zh/ch5.md#多主复制)
-    * [无主复制](content/zh/ch5.md#无主复制)
-    * [本章小结](content/zh/ch5.md#本章小结)
-* [第六章：分区](content/zh/ch6.md)
-    * [分区与复制](content/zh/ch6.md#分区与复制)
-    * [键值数据的分区](content/zh/ch6.md#键值数据的分区)
-    * [分区与次级索引](content/zh/ch6.md#分区与次级索引)
-    * [分区再平衡](content/zh/ch6.md#分区再平衡)
-    * [请求路由](content/zh/ch6.md#请求路由)
-    * [本章小结](content/zh/ch6.md#本章小结)
-* [第七章：事务](content/zh/ch7.md)
-    * [事务的棘手概念](content/zh/ch7.md#事务的棘手概念)
-    * [弱隔离级别](content/zh/ch7.md#弱隔离级别)
-    * [可串行化](content/zh/ch7.md#可串行化)
-    * [本章小结](content/zh/ch7.md#本章小结)
-* [第八章：分布式系统的麻烦](content/zh/ch8.md)
-    * [故障与部分失效](content/zh/ch8.md#故障与部分失效)
-    * [不可靠的网络](content/zh/ch8.md#不可靠的网络)
-    * [不可靠的时钟](content/zh/ch8.md#不可靠的时钟)
-    * [知识、真相与谎言](content/zh/ch8.md#知识、真相与谎言)
-    * [本章小结](content/zh/ch8.md#本章小结)
-* [第九章：一致性与共识](content/zh/ch9.md)
-    * [一致性保证](content/zh/ch9.md#一致性保证)
-    * [线性一致性](content/zh/ch9.md#线性一致性)
-    * [顺序保证](content/zh/ch9.md#顺序保证)
-    * [分布式事务与共识](content/zh/ch9.md#分布式事务与共识)
-    * [本章小结](content/zh/ch9.md#本章小结)
-
-### [第三部分：衍生数据](content/zh/part-iii.md)
-
-* [第十章：批处理](content/zh/ch10.md)
-    * [使用Unix工具的批处理](content/zh/ch10.md#使用Unix工具的批处理)
-    * [MapReduce和分布式文件系统](content/zh/ch10.md#MapReduce和分布式文件系统)
-    * [MapReduce之后](content/zh/ch10.md#MapReduce之后)
-    * [本章小结](content/zh/ch10.md#本章小结)
-* [第十一章：流处理](content/zh/ch11.md)
-    * [传递事件流](content/zh/ch11.md#传递事件流)
-    * [数据库与流](content/zh/ch11.md#数据库与流)
-    * [流处理](content/zh/ch11.md#流处理)
-    * [本章小结](content/zh/ch11.md#本章小结)
-* [第十二章：数据系统的未来](content/zh/ch12.md)
-    * [数据集成](content/zh/ch12.md#数据集成)
-    * [分拆数据库](content/zh/ch12.md#分拆数据库)
-    * [将事情做正确](content/zh/ch12.md#将事情做正确)
-    * [做正确的事情](content/zh/ch12.md#做正确的事情)
-    * [本章小结](content/zh/ch12.md#本章小结)
-
-### [术语表](content/zh/glossary.md)
-
-### [后记](content/zh/colophon.md)
-
-
-
----------
-
-## 法律声明
-
-从原作者处得知，已经有简体中文的翻译计划，将于 2018 年末完成。[购买地址](https://search.jd.com/Search?keyword=设计数据密集型应用)
-
-译者纯粹出于 **学习目的** 与 **个人兴趣** 翻译本书，不追求任何经济利益。
-
-译者保留对此版本译文的署名权，其他权利以原作者和出版社的主张为准。
-
-本译文只供学习研究参考之用，不得公开传播发行或用于商业用途。有能力阅读英文书籍者请购买正版支持。
-
-
----------
-
-## 贡献
+[GitHub 贡献者列表](https://github.com/Vonng/ddia/graphs/contributors)
 
 0. 全文校订 by [@yingang](https://github.com/Vonng/ddia/commits?author=yingang)
 1. [序言初翻修正](https://github.com/Vonng/ddia/commit/afb5edab55c62ed23474149f229677e3b42dfc2c) by [@seagullbird](https://github.com/Vonng/ddia/commits?author=seagullbird)
 2. [第一章语法标点校正](https://github.com/Vonng/ddia/commit/973b12cd8f8fcdf4852f1eb1649ddd9d187e3644) by [@nevertiree](https://github.com/Vonng/ddia/commits?author=nevertiree)
-3. [第六章部分校正](https://github.com/Vonng/ddia/commit/d4eb0852c0ec1e93c8aacc496c80b915bb1e6d48) 与[第十章的初翻](https://github.com/Vonng/ddia/commit/9de8dbd1bfe6fbb03b3bf6c1a1aa2291aed2490e) by [@MuAlex](https://github.com/Vonng/ddia/commits?author=MuAlex) 
-4. [第一部分](part-i.md)前言，[ch2](ch2.md)校正 by [@jiajiadebug](https://github.com/Vonng/ddia/commits?author=jiajiadebug)
-5. [词汇表](glossary.md)、[后记](colophon.md)关于野猪的部分 by [@Chowss](https://github.com/Vonng/ddia/commits?author=Chowss)
+3. [第六章部分校正](https://github.com/Vonng/ddia/commit/d4eb0852c0ec1e93c8aacc496c80b915bb1e6d48) 与[第十章的初翻](https://github.com/Vonng/ddia/commit/9de8dbd1bfe6fbb03b3bf6c1a1aa2291aed2490e) by [@MuAlex](https://github.com/Vonng/ddia/commits?author=MuAlex)
+4. [第一部分](/part-i)前言，[ch2](/ch2)校正 by [@jiajiadebug](https://github.com/Vonng/ddia/commits?author=jiajiadebug)
+5. [词汇表](/glossary)、[后记](/colophon)关于野猪的部分 by [@Chowss](https://github.com/Vonng/ddia/commits?author=Chowss)
 6. [繁體中文](https://github.com/Vonng/ddia/pulls)版本与转换脚本 by [@afunTW](https://github.com/afunTW)
 7. 多处翻译修正 by [@songzhibin97](https://github.com/Vonng/ddia/commits?author=songzhibin97) [@MamaShip](https://github.com/Vonng/ddia/commits?author=MamaShip) [@FangYuan33](https://github.com/Vonng/ddia/commits?author=FangYuan33)
-8. 感谢所有作出贡献，提出意见的朋友们：
 
-<details>
-<summary><a href="https://github.com/Vonng/ddia/pulls">Pull Requests</a> & <a href="https://github.com/Vonng/ddia/issues">Issues</a></summary>
+
+感谢所有提出意见，作出贡献的朋友们，您可以在这里找到所有贡献的 [Issue 列表](https://github.com/Vonng/ddia/issues) 与 [PR 列表](https://github.com/Vonng/ddia/pulls)：
 
 | ISSUE & Pull Requests                           | USER                                                       | Title                                                          |
 |-------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------|
@@ -353,12 +230,3 @@
 | [5  ](https://github.com/Vonng/ddia/pull/5)     | [@nevertiree](https://github.com/nevertiree)               | Chapter 01语法微调                                                 |
 | [2  ](https://github.com/Vonng/ddia/pull/2)     | [@seagullbird](https://github.com/seagullbird)             | 序言初翻                                                           |
 
-</details><br>
-
-
-
----------
-
-## 协议
-
-[![License: CC-BY 4.0](https://img.shields.io/github/license/Vonng/ddia?logo=opensourceinitiative&logoColor=green&color=slategray)](https://github.com/Vonng/ddia/blob/master/LICENSE)
